@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginView from '../views/LoginView.vue';
-import HomeView from '../views/HomeView.vue';
+import BillingView from '../views/BillingView.vue';
+import DashboardView from '../views/DashboardView.vue';
+import MasterLayout from '../layouts/MasterLayout.vue';
 
 const routes = [
   {
@@ -9,15 +11,16 @@ const routes = [
     component: LoginView
   },
   {
-    path: '/home',
-    name: 'home',
-    component: HomeView
+    path: '/billing',
+    name: 'billing',
+    component: BillingView,
+    meta: { layout: MasterLayout }
   },
   {
-    path: '/about',
-    name: 'about',
-    // Esta ruta utiliza carga diferida (lazy-loading)
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/dashboard',
+    name: 'dashboard',
+    component: DashboardView,
+    meta: { layout: MasterLayout }
   }
 ];
 

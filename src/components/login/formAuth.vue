@@ -17,7 +17,7 @@
         append-icon="mdi-eye"
         @click:append="togglePasswordVisibility"
       ></v-text-field>
-      <v-btn type="submit" color="primary" class="mt-4" block>Iniciar Sesión</v-btn>
+      <v-btn type="submit" color="primary" class="mt-10" block>Iniciar Sesión</v-btn>
     </v-form>
   </template>
   
@@ -42,7 +42,7 @@
   </script>
   
   <style scoped>
-  .mt-4 {
+  .mt-10 {
     margin-top:20px;
     width: 450px;
 

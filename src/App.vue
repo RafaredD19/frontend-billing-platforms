@@ -1,18 +1,20 @@
 <template>
-  <v-app>
-    <v-main>
-      <router-view/>
-    </v-main>
-  </v-app>
+  <component :is="layout">
+    <router-view />
+  </component>
 </template>
 
 <script>
+import MasterLayout from '@/layouts/MasterLayout.vue';
 
 export default {
-  name: 'App',
-
-  data: () => ({
-    //
-  }),
-}
+  computed: {
+    layout() {
+      return this.$route.meta.layout || 'div';
+    }
+  },
+  components: {
+    MasterLayout
+  }
+};
 </script>

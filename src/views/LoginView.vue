@@ -3,10 +3,10 @@
       <v-container fluid fill-height>
         <v-row no-gutters class="fill-height">
           <v-col cols="12" md="6" class="image-column fill-height">
-            <!-- Esta columna será para la imagen -->
+            <!-- Imagen de fondo -->
           </v-col>
           <v-col cols="12" md="6" class="form-column fill-height d-flex align-center justify-center">
-            <v-card class="elevation-12" max-width="400">
+            <v-card class="elevation-12" max-width="500">
               <v-card-title class="headline">Iniciar Sesión</v-card-title>
               <v-card-text>
                 <form-auth @login="handleLogin" />
@@ -27,8 +27,13 @@
     },
     methods: {
       handleLogin(credentials) {
-        // Aquí manejarías la lógica de autenticación
-        console.log('Login con credenciales:', credentials);
+        // Simulación de autenticación
+        if (credentials.username === 'test' && credentials.password === '1234') {
+          // Redirigir a la vista de Billing
+          this.$router.push({ name: 'billing' });
+        } else {
+          alert('Credenciales incorrectas. Use username: test y password: 1234');
+        }
       }
     }
   };
